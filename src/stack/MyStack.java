@@ -1,14 +1,15 @@
 package stack;
 
-public class MyStack {
+public class MyStack<T>  {
 
-    private int[] array;
+    private Object[] array;
     private int top;
     private int size;
 
+
     public MyStack(int size) {
         this.size = size;
-        array = new int[size];
+        array = new Object[size];
         top = -1;
     }
 
@@ -28,7 +29,7 @@ public class MyStack {
         return top;
     }
 
-    public int peek(){
+    public Object peek(){
         return array[top];
     }
 
