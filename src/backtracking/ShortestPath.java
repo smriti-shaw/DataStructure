@@ -7,8 +7,6 @@ public class ShortestPath {
         int[][] input = {{3,1,5},{6,11,17},{2,9,4}};
         ShortestPath shortestPath = new ShortestPath();
         System.out.println(shortestPath.findmin(2,2,0,input));
-
-
     }
 
     private int minimum(int a, int b, int c){
@@ -30,8 +28,6 @@ public class ShortestPath {
             return 9000000;
         }
         sum +=input[i][j];
-
-
         return   minimum(findmin(i-1,j-1,sum,input),
                 findmin(i,j-1,sum,input),
                 findmin(i-1,j,sum,input));

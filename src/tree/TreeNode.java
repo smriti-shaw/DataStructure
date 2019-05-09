@@ -2,20 +2,20 @@ package tree;
 
 import java.util.TreeMap;
 
-public class TreeNode {
+public class TreeNode<T> {
 
     TreeNode left;
     TreeNode right;
-    int value;
+    T value;
 
-    public TreeNode(int value) {
+    public TreeNode(T value) {
         this.value = value;
         left = null;
         right = null;
     }
 
     public TreeNode() {
-        this.value = 0;
+        this.value = null;
         left = null;
         right = null;
     }
