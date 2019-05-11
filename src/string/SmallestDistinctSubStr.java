@@ -3,7 +3,8 @@ package string;
 public class SmallestDistinctSubStr {
 
     public static void main(String[] args) {
-        String input = "facdedb";
+        String input = "facbdedb";
+
         String pattern = "abd";
         System.out.println(findSubString(input, pattern));
 
@@ -13,6 +14,8 @@ public class SmallestDistinctSubStr {
     {
         int strLen= str.length();
         int patLen = pat.length();
+        if(strLen < patLen)
+            return "-1";
         int[] str_count = new int[256];
         int[] ptr_count = new int[256];
         int start=0, start_index=-1, count =0, min_win_len = Integer.MAX_VALUE;
@@ -29,7 +32,7 @@ public class SmallestDistinctSubStr {
             if(patLen == count){
                 while(str_count[str.charAt(start)] > ptr_count[str.charAt(start) ] ||
                 ptr_count[str.charAt(start)] == 0){
-                    if(ptr_count[str.charAt(start)] > str_count[str.charAt(start)])
+                    if(str_count[str.charAt(start)] > ptr_count[str.charAt(start)])
                         str_count[str.charAt(start) ]--;
                     start++;
                 }
@@ -41,6 +44,8 @@ public class SmallestDistinctSubStr {
 
             }
         }
+        if(start_index == -1)
+            return "-1";
         return str.substring(start_index, start_index + min_win_len);
     }
 }
