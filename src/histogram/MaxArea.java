@@ -1,5 +1,7 @@
 package histogram;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Stack;
 
 public class MaxArea {
@@ -24,11 +26,13 @@ public class MaxArea {
                         area = input[top] * ((i ) - stackTop - 1);
                     }
                 }
-
                 stack.push(i);
 
-                if(area > maxArea)
+                if(area > maxArea) {
                     maxArea = area;
+                    System.out.println("maxArea " +maxArea);
+
+                }
 
             }
 
